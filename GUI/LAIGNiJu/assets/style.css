@@ -1,0 +1,237 @@
+@import url(https://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(https://fonts.googleapis.com/css?family=Days+One);
+
+body 
+{
+    background-color: #333;
+    font-family: shadows into light;
+}
+
+canvas 
+{
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#errorMessage p
+{
+    text-align: center;
+    font-size: 400%;
+    font-family: 'Days One';
+    color: #006680;
+    top: 5%;
+    left: 40%;
+    right: 40%;
+}
+
+.configLabel 
+{
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: 50px;
+    color: orange;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.configOptions select:hover
+{
+    color: #7A0000;
+}
+
+.configOptions select 
+{
+    margin: auto;
+    border: 0;
+    color: orange;
+    background: transparent;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 2px 10px;
+    height: 70px;
+    width: 600px;
+    *width: 350px;
+    *background: #006680;
+    -webkit-appearance: none;
+}
+
+.configOptions 
+{
+    margin: auto;
+    overflow:hidden;
+    width:350px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border-radius: 9px 9px 9px 9px;
+    background: #006680 url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+}
+
+.backArrow
+{
+    position: absolute;
+    top: 50px;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border-top: .4rem solid orange;
+    border-right: .4rem solid orange;
+    box-shadow: 0 0 0 lightgray;
+    transition: all 200ms ease;
+    left: 50px;
+    transform: translate3d(0,-50%,0) rotate(-135deg);
+}
+
+
+.backArrow:hover 
+{
+    border-top: .4rem solid #7A0000;
+    border-right: .4rem solid #7A0000;
+    box-shadow: .2rem -.2rem 0 black;
+    left: 30px;
+}
+
+#optionsList 
+{
+    width: 0px;
+    height: 0px;
+    border-left: 300px solid transparent;
+    border-right: 300px solid transparent;
+    border-top: 300px solid transparent;
+    border-radius: px;
+    position: relative;
+    margin: auto;
+    top: 5px;
+    left: 2px;
+}
+
+#optionsList div
+{
+    position: relative;
+    bottom: 330px;
+    right: 300px;
+    height: 100px;
+    width: 600px;
+    background: #006680;
+    text-align: center;
+    font-size: 400%;
+    background-size: 1px 300%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: orange;
+    font-family: shadows into light;
+    cursor: pointer;
+}
+
+
+#optionsList div:hover 
+{
+    background: #7A0000;
+    color: white;
+}
+
+
+#niJu
+{
+    font-size: 900%;
+    text-align: center;
+    color:#006680;
+    cursor: pointer;
+}
+
+
+.endOfGameStyle 
+{
+    z-index: 5;
+}
+
+
+#credits
+{
+    font-size: 650%;
+    text-align: center;
+    color:#006680;
+    cursor: pointer;
+}
+
+
+#endOfGameTitle 
+{
+    font-size: 450%;
+    text-align: center;
+    color:rgb(230, 43, 43);
+    cursor: pointer;
+}
+
+.score-board
+{
+    font-family: 'Days One';
+    list-style: none;
+    padding:0;
+    margin: 0 auto;
+    position: relative;
+    width: 550px;
+    height: 70px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 5px 5px 30px 30px;
+    color: #006680;
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f1f1f1 50%, #e1e1e1 51%, #f6f6f6 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #ffffff 0%,#f1f1f1 50%,#e1e1e1 51%,#f6f6f6 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
+}
+
+
+
+.score-board li
+{
+    display: inline-block;
+}
+
+.score-board .score
+{
+    color: #006680;
+    padding: 0px 30px;
+    border-radius: 10px 10px 100px 100px;
+    background: orange; /* Old browsers */
+    background: -moz-linear-gradient(top,  orange 0%, orange 50%, orange 51%, orange 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,orange), color-stop(50%,orange), color-stop(51%,orange), color-stop(100%,orange)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  orange 0%,orange 50%,orange 51%,orange 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='orange', endColorstr='orange',GradientType=0 ); /* IE6-9 */
+}
+
+.score-board .time
+{ 
+    color: #006680;
+    clear: both;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -135px;
+    width: 270px;
+    font-size: 80%;
+    border-radius: 5px 5px 50px 50px;
+    background: orange; /* Old browsers */
+    background: -moz-linear-gradient(top,  orange 0%, orange 50%, orange 51%, orange 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,orange), color-stop(50%,orange), color-stop(51%,orange), color-stop(100%,orange)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  orange 0%,orange 50%,orange 51%,orange 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  orange 0%,orange 50%,orange 51%,orange 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='orange', endColorstr='orange',GradientType=0 ); /* IE6-9 */
+}

@@ -1,0 +1,382 @@
+<SCENE>
+
+	<!-- Initial values -->
+	<INITIALS>
+		<frustum near="0.1" far="500" />
+		<translation x="-1" y="1" z="0" />
+		<rotation axis="x" angle="0" />
+		<rotation axis="y" angle="0" />
+		<rotation axis="z" angle="0" />
+		<scale sx="0.25" sy="0.25" sz="0.25" />
+		<reference length="5" />
+	</INITIALS>
+
+
+	<!-- Illumination and clear colour -->
+	<ILLUMINATION>
+		<ambient r="0.2" g="0.2" b="0.2" a="1" />
+		<background r="0" g="0" b="0" a="1" />
+	</ILLUMINATION>
+
+
+	<!-- Lights -->
+	<LIGHTS>
+		<LIGHT id="Left Back Light">
+			<enable value="1" />
+			<position x="0" y="15" z="0" w="1" />
+			<ambient r="0.5" g="0.5" b="0.5" a="1.0" />
+			<diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+			<specular r="1.0" g="1.0" b="1.0" a="1.0" />
+		</LIGHT>
+
+		<LIGHT id="Right Back Light">
+			<enable value="1" />
+			<position x="124" y="15" z="0" w="1" />
+			<ambient r="0.5" g="0.5" b="0.5" a="1.0" />
+			<diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+			<specular r="1.0" g="1.0" b="1.0" a="1.0" />
+		</LIGHT>
+
+		<LIGHT id="Left Front Light">
+			<enable value="1" />
+			<position x="0" y="15" z="124" w="1" />
+			<ambient r="0.5" g="0.5" b="0.5" a="1.0" />
+			<diffuse r="1.0" g="1.0" b="1.0" a="1.0" />
+			<specular r="1.0" g="1.0" b="1.0" a="1.0" />
+		</LIGHT>
+
+		<LIGHT id="Right Front Light">
+			<enable value="1" />
+			<position x="124" y="15" z="124" w="1" />
+			<ambient r="0.5" g="0.5" b="0.5" a="1.0" />
+			<diffuse r="0.6" g="0.6" b="0.6" a="1.0" />
+			<specular r="0.6" g="0.6" b="0.6" a="1.0" />
+		</LIGHT>
+
+	</LIGHTS>
+
+	<!-- Textures -->
+	<TEXTURES>
+	
+    <!-- Madeira chao -->
+    <TEXTURE id="wood_floor">
+      <file path="images/wood_floor.jpg" />
+      <amplif_factor s="0.5" t="0.5" />
+    </TEXTURE>
+
+    <!-- wood mesa vertical -->
+    <TEXTURE id="wood_vertical">
+      <file path="images/wood_vertical.jpg" />
+      <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <!-- wood mesa horizontal -->
+    <TEXTURE id="wood_horizontal">
+      <file path="images/wood_horizontal.jpg" />
+      <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+    <!-- Arvore Natal -->
+    <TEXTURE id="arvore_natal">
+      <file path="images/arvore-de-natal.png" />
+      <amplif_factor s="1" t="1" />
+    </TEXTURE>
+    
+    <!-- Presente Natal -->
+    <TEXTURE id="presente_natal">
+      <file path="images/presente_natal.png" />
+      <amplif_factor s="1" t="1" />
+    </TEXTURE>
+
+  </TEXTURES>
+
+
+	<MATERIALS>
+
+    <!-- A default material -->
+    <MATERIAL id="defaultMaterial">
+      <shininess value="1" />
+      <specular r="0.0" g="0.0" b="0.0" a="1" />
+      <diffuse r="0.4" g="0.4" b="0.4" a="1" />
+      <ambient r="0.4" g="0.4" b="0.4" a="1" />
+      <emission r="0.0" g="0.0" b="0.0" a="1" />
+    </MATERIAL>
+	
+		<!-- Shinning material -->
+		<MATERIAL id="shine_material">
+			<shininess value="1" />
+			<specular r="0.8" g="0.8" b="0.8" a="1" />
+			<diffuse r="0.3" g="0.3" b="0.3" a="1" />
+			<ambient r="0.2" g="0.2" b="0.2" a="1" />
+			<emission r="0.0" g="0.0" b="0.0" a="1" />
+		</MATERIAL>
+
+	</MATERIALS>
+
+
+	<!-- The nodes -->
+	<NODES>
+
+		<ROOT id="root" />
+
+		<!-- The root node -->
+		<NODE id="root" selectable="false">
+			<MATERIAL id="defaultMaterial" />
+			<TEXTURE id="null" />
+
+			<DESCENDANTS>
+        <NODEREF id="chao" />
+				<NODEREF id="arvore_natal" />
+        <NODEREF id="presentes" />
+        <NODEREF id="mesa" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!--1x1x1 Cube -->
+		<NODE id="unit_cube">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<DESCENDANTS>
+				<NODEREF id="faceCubo1" />
+				<NODEREF id="faceCubo2" />
+				<NODEREF id="faceCubo3" />
+				<NODEREF id="faceCubo4" />
+				<NODEREF id="faceCubo5" />
+				<NODEREF id="faceCubo6" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- A cube face -->
+		<NODE id="faceCubo1">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<TRANSLATION x="0" y="0" z="1" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- Another cube face -->
+		<NODE id="faceCubo2">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<TRANSLATION x="1" y="0" z="1" />
+			<ROTATION axis="y" angle="90" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- Another cube face -->
+		<NODE id="faceCubo3">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<TRANSLATION x="1" y="0" z="0" />
+			<ROTATION axis="y" angle="180" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- Another cube face -->
+		<NODE id="faceCubo4">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<ROTATION axis="y" angle="270" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- Another cube face -->
+		<NODE id="faceCubo5">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<ROTATION axis="x" angle="90" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+		<!-- Another cube face -->
+		<NODE id="faceCubo6">
+			<MATERIAL id="null" />
+			<TEXTURE id="null" />
+
+			<TRANSLATION x="0" y="1" z="1" />
+			<ROTATION axis="x" angle="-90" />
+
+			<DESCENDANTS>
+				<LEAF type="rectangle" args="0 1 1 0" />
+			</DESCENDANTS>
+
+		</NODE>
+
+
+    <!-- Table -->
+    <NODE id="mesa">
+      <MATERIAL id="defaultMaterial" />
+      <TEXTURE id="null" />
+
+      <TRANSLATION x="7.5" y="0.7" z="8.5" />
+      
+
+      <DESCENDANTS>
+        <NODEREF id="mesa_baixo" />
+        <NODEREF id="tampo" />
+      </DESCENDANTS>
+    </NODE>
+
+    
+    
+    <NODE id="mesa_baixo">
+      <MATERIAL id="null" />
+      <TEXTURE id="wood_vertical" />
+      
+      <TRANSLATION x="0.5" y="2.5" z="0.15" />
+      <SCALE sx="5" sy="2.5" sz="3.5" />
+      <ROTATION axis="x" angle="90" />
+
+      <DESCENDANTS>
+        <LEAF id="cylinder" type="cylinder" args="1 1 1 20 20 1 1" />
+      </DESCENDANTS>
+    </NODE>
+
+    
+    
+    <NODE id="tampo">
+      <MATERIAL id="null" />
+      <TEXTURE id="wood_horizontal" />
+
+      <TRANSLATION x="0.5" y="2.8" z="0" />
+      <SCALE sx="6" sy="0.4" sz="5" />
+      <ROTATION axis="x" angle="90" />
+
+      <DESCENDANTS>
+        <LEAF id="cylinder" type="cylinder" args="1 1 1 40 40 1 1" />
+      </DESCENDANTS>
+    </NODE>
+
+
+    <NODE id="chao">
+      <MATERIAL id="null" />
+      <TEXTURE id="wood_floor" />
+
+      <TRANSLATION x="-5" y="0" z="-5" />
+      <SCALE sx="25" sy=".7" sz="25" />
+
+      <DESCENDANTS>
+        <NODEREF id="unit_cube" />
+      </DESCENDANTS>
+    </NODE>
+
+
+
+    <NODE id="arvore_natal">
+      <MATERIAL id="null" />
+      <TEXTURE id="arvore_natal" />
+
+      <TRANSLATION x="-4" y="0" z="-4" />
+      <TRANSLATION x="2.5" y="0" z="2.2" />
+      <SCALE sx="3" sy="9" sz="2.4" />
+      <ROTATION axis="x" angle="-90" />
+
+      <DESCENDANTS>
+        <LEAF id="cylinder" type="cylinder" args="1 1 0 20 20 0 0" />
+      </DESCENDANTS>
+    </NODE>
+
+
+    <NODE id="presentes">
+      <MATERIAL id="null" />
+      <TEXTURE id="wood_floor" />
+
+      <TRANSLATION x="-3.5" y="0" z="-3.5" />
+
+      <DESCENDANTS>
+        <NODEREF id="presente1" />
+        <NODEREF id="presente2" />
+        <NODEREF id="presente3" />
+        <NODEREF id="presente4" />
+      </DESCENDANTS>
+    </NODE>
+
+    <NODE id="presente1">
+      <MATERIAL id="null" />
+      <TEXTURE id="null" />
+
+      <TRANSLATION x="1" y="0" z="3.8" />
+      <ROTATION axis="y" angle="-20" />
+
+      <DESCENDANTS>
+        <NODEREF id="presente" />
+      </DESCENDANTS>
+    </NODE>
+    
+    <NODE id="presente2">
+      <MATERIAL id="null" />
+      <TEXTURE id="null" />
+
+      <TRANSLATION x="2.5" y="0" z="4.4" />
+      <ROTATION axis="y" angle="20" />
+
+      <DESCENDANTS>
+        <NODEREF id="presente" />
+      </DESCENDANTS>
+    </NODE>
+    
+    <NODE id="presente3">
+      <MATERIAL id="null" />
+      <TEXTURE id="null" />
+
+      <TRANSLATION x="4" y="0" z="3.6" />
+      <ROTATION axis="y" angle="30" />
+      
+      <DESCENDANTS>
+        <NODEREF id="presente" />
+      </DESCENDANTS>
+    </NODE>
+    
+    <NODE id="presente4">
+      <MATERIAL id="null" />
+      <TEXTURE id="null" />
+
+      <TRANSLATION x="5" y="0" z="1.5" />
+
+      <DESCENDANTS>
+        <NODEREF id="presente" />
+      </DESCENDANTS>
+    </NODE>
+
+    <NODE id="presente">
+      <MATERIAL id="null" />
+      <TEXTURE id="presente_natal" />
+
+      <TRANSLATION x="0" y="0.7" z="0" />
+
+      <DESCENDANTS>
+        <NODEREF id="unit_cube" />
+      </DESCENDANTS>
+    </NODE>
+
+  </NODES>
+
+</SCENE>
